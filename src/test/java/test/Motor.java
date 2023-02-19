@@ -1,9 +1,9 @@
 package test;
 
 public class Motor {
-    private int numeroCilindros;
-    private String tipo;
-    private int registro;
+    public int numeroCilindros;
+    public String tipo;
+    public int registro;
     
     public Motor(int numeroCilindros, String tipo, int registro) {
         this.numeroCilindros = numeroCilindros;
@@ -21,15 +21,4 @@ public class Motor {
         }
     }
 
-    public int getRegistro() {
-        return registro;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public int getCilindros() {
-        return numeroCilindros;
-    }
 }
