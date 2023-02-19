@@ -11,18 +11,11 @@ public class Auto{
     public int registro;
     public static int cantidadCreados;
 
-    // Constructor de la clase Persona
-    public Auto(String modelo, int precio, Asiento[] asientos, String marca, Motor motor, int registro) {
-        this.modelo = modelo;
-        this.precio = precio;
-        this.asientos = asientos;
-        this.marca = marca;
-        this.motor = motor;
-        this.registro = registro;
+    public Auto() {
         cantidadCreados++;
     }
 
-    // Método para obtener el total de personas creadas
+
     public int cantidadAsientos() {
         int cantidad = 0;
         for (Asiento asiento : asientos) {
