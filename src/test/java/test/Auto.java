@@ -27,22 +27,24 @@ public class Auto{
     }
 
     public String verificarIntegridad() {
-        int registro_auto = this.registro;
-        int registro_motor = this.motor.getRegistro();
-        int[] registro_asientos = new int[this.asientos.length];
-        int index = 0;
-        for (Asiento asiento : this.asientos) {
-            if (asiento != null) {
-                registro_asientos[index] = asiento.getRegistro();
-                index++;
-            }
-        }
-        if (registro_auto == registro_motor && Arrays.stream(registro_asientos).allMatch(registro -> registro == registro_auto)) {
-            return "Auto original";
-        } else {
-            return "Las piezas no son originales";
-        }
-    }
+		
+		if (this.registro != this.motor.registro) {
+			return "Las piezas no son originales";}
+		
+		else {
+			for (Asiento a : this.asientos) {
+				if (a == null) {
+					continue;
+				}
+				else {
+					if (a.registro != this.registro) {
+						return "Las piezas no son originales";
+					}
+				}			
+			}	
+		}
+		return "Auto original";
+	}
 
 }
 
